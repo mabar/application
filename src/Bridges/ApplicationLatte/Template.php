@@ -44,7 +44,7 @@ abstract class Template implements Nette\Application\UI\Template
 		if (isset($this->blueprint)) {
 			Nodes\TemplatePrintNode::printClass($this->getParameters(), $this->blueprint);
 		}
-		$this->latte->render($file ?: $this->file, $this);
+		$this->latte->render($file ?? $this->file, $this);
 	}
 
 
@@ -54,7 +54,7 @@ abstract class Template implements Nette\Application\UI\Template
 	public function renderToString(?string $file = null, array $params = []): string
 	{
 		Nette\Utils\Arrays::toObject($params, $this);
-		return $this->latte->renderToString($file ?: $this->file, $this);
+		return $this->latte->renderToString($file ?? $this->file, $this);
 	}
 
 
