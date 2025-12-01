@@ -38,6 +38,11 @@ class TemplateFactory implements UI\TemplateFactory
 	}
 
 
+	/**
+	 * @template T of Template = Template
+	 * @param class-string<T>|null $class
+	 * @return T
+	 */
 	public function createTemplate(?UI\Control $control = null, ?string $class = null): Template
 	{
 		$class ??= $this->templateClass;
